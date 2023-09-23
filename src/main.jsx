@@ -9,6 +9,7 @@ import MainLayout from './layout/MainLayout.jsx';
 import Home from './layout/Home.jsx';
 import Favourites from './Components/Favourites/Favourites';
 import Login from './Components/Login/Login';
+import PhoneDetails from './Components/Phones/PhoneDetails';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
         path:'/login',
         element:<Login></Login>
       },
+      {
+        path:'/phone/:id',
+        loader:()=> fetch('/data.json'),
+        element:<PhoneDetails></PhoneDetails>
+      }
     ]
 
   },
