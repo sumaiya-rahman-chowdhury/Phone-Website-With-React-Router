@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { GlobalContext } from "../../main";
 
 const Login = () => {
+    const getVal = useContext(GlobalContext)
+    console.log(getVal)
     return (
         <div>
             <div className=" flex justify-center items-center h-screen">

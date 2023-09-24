@@ -7,7 +7,7 @@ const Phone = ({ phone }) => {
     return (
         <div>
             <div>
-                <div className="rounded-md w-96 bg-base-100 shadow-xl mx-auto">
+                <div className="rounded-md lg:w-96 bg-base-100 shadow-xl mx-auto">
                     <figure className="px-10 pt-10">
                         <img src={phone?.image
                         } alt="Shoes" className="rounded-xl h-[300px] " />
@@ -21,7 +21,7 @@ const Phone = ({ phone }) => {
                             initialRating={phone?.rating}
                             readonly />
                         <div className=""></div>
-                        <Link to={`/phone/${phone?.id}`}>
+                        <Link to={`/phone/${phone?.id}`} state={phone?.phone_name}>
                             <button className="bg-amber-100 w-full py-2 rounded font-semibold mt-2">See Details</button>
                         </Link>
                     </div>

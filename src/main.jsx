@@ -10,6 +10,9 @@ import Home from './layout/Home.jsx';
 import Favourites from './Components/Favourites/Favourites';
 import Login from './Components/Login/Login';
 import PhoneDetails from './Components/Phones/PhoneDetails';
+import { createContext } from 'react';
+
+export const GlobalContext = createContext(null)
 
 const router = createBrowserRouter([
   {
@@ -40,6 +43,9 @@ const router = createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router}></RouterProvider>
+   <GlobalContext.Provider value={{user:"true"}}>
+  <RouterProvider router={router}></RouterProvider>
+
+   </GlobalContext.Provider >
   </React.StrictMode>,
 )
